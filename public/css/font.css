@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@500&family=Sawarabi+Mincho&display=swap');
+    .site_title {
+    font-family: 'Enriqueta', serif;
+}
+
+@media (max-width: 768px) {
+    .navbar-header, .navbar-nav{
+        float: left;
+    }
+
+    .navbar-collapse.collapse {
+        display: block;
+        border-top: none;
+    }
+
+    .navbar-right {
+        float: right;
+    }
+}
+
+.description {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.postslist {
+    text-align: center;
+    margin-bottom: 80px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.post {
+    text-align: center;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    margin-bottom: 100px;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: black;
+  border: solid 2px black;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: white;
+  color: black;
+}
+.fas {
+    margin-left: 50px;
+}
+
+.form-group {
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.submit {
+    text-align: center;
+}
+
+.row {
+    border-radius: 0;
+}
+
+.form-control {
+    border: 0;
+    outline: 1px solid #ccc;
+    outline-offset: -1px;
+}
+.form-control:focus {
+    border-color: black;
+    border-radius: 0;
+    box-shadow: 0 0 0 0.2rem rgba( 0, 0, 0, .8);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: black;
+    border: solid 2px black;
+    transition: .4s;
+    border-radius: 0;
+}
+.btn:hover {
+    background: white;
+    color: black;
+}
+
