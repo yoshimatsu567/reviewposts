@@ -91,3 +91,12 @@
     color: black;
 }
 
+.new {
+    text-align: center;
+    margin-top: 25px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.new:link_to_route {
+    color:red;
+}
