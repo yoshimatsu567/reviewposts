@@ -6,20 +6,20 @@
       <ul class="navbar-nav mr-auto"></ul>
       <div class="site_title navbar-right">
         {{--投稿ページリンク--}}
-        <a class="navbar-brand" href="#">Post</a>
+        <a class="navbar-brand" href="{{route('posts.create')}}">Post</a>
         {{-- ランキングページリンク  --}}
         <a class="navbar-brand" href="#">Top Charts</a>
         {{-- ログアウトページリンク  --}}
-        <a class="navbar-brand" href="logout.get">Login</a>
+        <a class="navbar-brand" href="{{route('logout.get')}}">Logout</a>
     @else      
       <ul class="navbar-nav mr-auto"></ul>
       <div class="site_title navbar-right">
         {{-- ランキングページリンク  --}}
         <a class="navbar-brand" href="#">Top Charts</a>
         {{-- ユーザ登録ページリンク  --}}
-        <a class="navbar-brand" href="signup">Sign Up</a>
+        <a class="navbar-brand" href="{{route('signup.get')}}">Sign Up</a>
         {{-- ログインページリンク  --}}
-        <a class="navbar-brand" href="login">Login</a>
+        <a class="navbar-brand" href="{{route('login')}}">Login</a>
       </div>
     @endif
     </div>

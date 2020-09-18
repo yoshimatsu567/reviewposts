@@ -7,24 +7,21 @@
       <h1>Posts List</h1>
     </div>
     
-    <div class="post">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VC4ORS5n9Hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Nas - Nas is like -</h3>
-      <p>user_name</p>
-      <a href="#" class="btn-flat-border">Read more</a>
-    </div>
     
-    <div class="post">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/17VWstpmGHc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>TKR - AM24 -</h3>
-      <p>user_name</p>
-      <a href="#" class="btn-flat-border">Read more</a>
-    </div>
     
-    <div class="post">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/9GvB9ySUJ3A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      <h3>Cam'Ron ft. Juelz Santana - Oh Boy -<span style="margin-right:5px;"></span><i class="fas fa-thumbs-up"></i></h3>
-      <p>user_name</p>
-      <a href="#" class="btn-flat-border">Read more</a>
-    </div>
+    @foreach ($posts as $post)
+      @php
+        $url = $post->youtube_code;
+        $keys = parse_url($url); //パース処理
+        $path = explode("/", $keys['path']); //分割処理
+        $last = end($path); //最後の要素を取得
+      @endphp
+      <div class="post">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$last}} " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h3>{{ $post->title }}</h3>
+        <p>{{ $post->user_id }}</p>
+        <a href="{{ route('posts.show', $post->id, ['post' => $post->id]) }}" class="btn-flat-border">Read more</a>
+      </div>
+    @endforeach
+    
 @endsection

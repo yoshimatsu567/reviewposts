@@ -60,6 +60,8 @@
 
 .submit {
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .row {
@@ -97,6 +99,18 @@
     font-family: 'Sawarabi Mincho', sans-serif;
 }
 
-.new:link_to_route {
-    color:red;
+.post_title {
+    text-align: center;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+.post_content {
+    text-align: center;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    margin-top: 40px;
+}
+
+.edit {
+    margin-top: 80px;
 }

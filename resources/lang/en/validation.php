@@ -146,6 +146,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'youtube_code' => 'YouTube URL'
+    ],
 
 ];
