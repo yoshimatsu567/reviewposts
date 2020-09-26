@@ -9,7 +9,7 @@
       <title>North Beach</title>
   </head>
   
-  <body>
+  <body class="body">
       {{-- ナビバー --}}
       @include('commons.navbar')
       

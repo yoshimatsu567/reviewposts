@@ -17,12 +17,22 @@ class PostsController extends Controller
      */
     public function index()
     {
-        
         $posts = Post::orderBy('created_at', 'desc')->get();
-        // $posts = \DB::table('posts')->get();
-        // $posts = App\Post::get();
         
-        
+        foreach($posts as $post){
+            $post_count = count($post->favorites_users()->get());
+            $post->post_count = $post_count;
+            $url = $post->youtube_code;
+            $path_list = explode("=", $url); //分割処理
+            if(count($path_list) > 1 ){
+                $last = mb_substr($path_list[1], 0, 11);
+            }
+            else{
+                $path = explode("/", $url); //分割処理
+                $last = end($path); //最後の要素を取得
+            }
+            $post->last = $last;
+        }
         
         return view('welcome', [
             'posts' => $posts,
@@ -53,7 +63,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'youtube_code' => 'required|active_url|min:28|max:28',
+            'youtube_code' => 'required|active_url',
             'title' => 'required|max:100',
             'content' => 'required|max:255',
         ]);
@@ -65,7 +75,7 @@ class PostsController extends Controller
         $post->content = $request->content;
         $post->save();
 
-        $name = \App\User::select('name')->get();
+        
         
         return redirect('/');
     }
@@ -79,10 +89,26 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
+
+        $post_count = count($post->favorites_users()->get());
+        $post->post_count = $post_count;
         
-            return view('posts.show',[
-                'post' => $post,    
-            ]);
+        $url = $post->youtube_code;
+        $path_list = explode("=", $url); //分割処理
+        
+        if(count($path_list) > 1 ){
+            $last = mb_substr($path_list[1], 0, 11);
+        }
+        else{
+            $path = explode("/", $url); //分割処理
+            $last = end($path); //最後の要素を取得
+        }
+        $post->last = $last;
+
+        
+        return view('posts.show',[
+            'post' => $post,    
+        ]);
     }
 
     /**
@@ -115,7 +141,7 @@ class PostsController extends Controller
         $post = Post::findOrFail($id);
         
         $request->validate([
-            'youtube_code' => 'required|active_url|min:28|max:28',
+            'youtube_code' => 'required|active_url',
             'title' => 'required|max:100',
             'content' => 'required|max:255',
         ]);

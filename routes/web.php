@@ -33,5 +33,19 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
+Route::group(['middleware' => ['auth']], function(){
+    Route::group(['prefix' => 'post/{id}'], function(){
+        Route::post('favorite', 'FavoriteController@store')->name('favorite.favorite');
+        Route::delete('unfavorite', 'FavoriteController@destroy')->name('favorite.unfavorite');
+    });
+});
+
+Route::get('favorite', 'FavoriteController@index')->name('favorite.index');
 
 
+Route::resource('users', 'UsersController');
+Route::get('users/{user_id}', 'UsersController@show')->name('users.show');
+
+Route::group(['prefix' => 'user/{id}'], function(){
+    Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
+});

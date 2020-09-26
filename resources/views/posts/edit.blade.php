@@ -34,7 +34,6 @@
                     {!! Form::submit('Delete', ['class' => 'btn']) !!}
                 {!! Form::close() !!}
             </div>
-            
-        
+       
     </div>
 @endsection
