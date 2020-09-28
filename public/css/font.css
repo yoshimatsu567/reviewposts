@@ -176,3 +176,39 @@ li a:hover:not(.active) {
   font-family: 'Sawarabi Mincho', sans-serif;
   margin-top: 200px;
 }
+
+.dislike {
+    border: none;
+    border-radius: 0;
+    color: black;
+    cursor: pointer;
+    background: white;
+    /*box-shadow: 1px 1px #666666;*/
+}
+.dislike:hover{
+    border-radius: 0;
+    color: black;
+    cursor: pointer;
+    box-shadow: none;
+}
+.like {
+    border: none;
+    border-radius: 0;
+    background: white;
+    color: black;
+    cursor: pointer;
+    /*box-shadow: 1px 1px #666666;*/
+} 
+.like:hover{
+    border-radius: 0;
+    color: black;
+    cursor: pointer;
+    box-shadow: none;
+}
+.good_button {
+    margin-bottom: 10px;
+}
+.good_button li {
+   display: inline-block;
+   margin-top: 10px;
+}

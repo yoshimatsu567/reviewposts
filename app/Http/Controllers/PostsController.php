@@ -63,7 +63,7 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'youtube_code' => 'required|active_url',
+            'youtube_code' => 'required|active_url|min:28|max:82',
             'title' => 'required|max:100',
             'content' => 'required|max:255',
         ]);
@@ -75,8 +75,6 @@ class PostsController extends Controller
         $post->content = $request->content;
         $post->save();
 
-        
-        
         return redirect('/');
     }
 
