@@ -8,7 +8,7 @@
         {{--投稿ページリンク--}}
         <a class="navbar-brand" href="{{route('posts.create')}}">Post</a>
         {{-- ランキングページリンク  --}}
-        <a class="navbar-brand" href="{{ route('favorite.index')  }}">Top Charts</a>
+        <a class="navbar-brand" href="{{ route('favorite.index')}}">Top Charts</a>
         {{-- ログアウトページリンク  --}}
         <a class="navbar-brand" href="{{route('logout.get')}}">Logout</a>
     @else      

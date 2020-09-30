@@ -3,7 +3,7 @@
     font-family: 'Enriqueta', serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1690px) {
     .navbar-header, .navbar-nav{
         float: left;
     }
@@ -17,6 +17,19 @@
         float: right;
     }
 }
+
+@media (max-width: 375px) {
+    .description {
+        margin: 0 auto;
+    }
+    header {
+        width: 559px;
+    }
+    body {
+        width: 559px;
+    }
+}
+
 
 .description {
     text-align: center;
@@ -135,6 +148,7 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: white;
+	border-radius: 0;
 }
 li {
 	display: inline-block;
@@ -208,7 +222,21 @@ li a:hover:not(.active) {
 .good_button {
     margin-bottom: 10px;
 }
+.good_button: focus {
+    outline-color: black;
+    border-radius: 0;
+}
 .good_button li {
    display: inline-block;
    margin-top: 10px;
 }
+
+.pagination {
+    justify-content: center;
+    color: black;
+    background-color: white;
+}
+.disable a {
+    color: black;
+}
+
